@@ -386,7 +386,9 @@ static int gralloc_lock(gralloc_module_t const* module, buffer_handle_t handle,
     }
 #endif
     if (usage & (GRALLOC_USAGE_SW_READ_MASK | GRALLOC_USAGE_SW_WRITE_MASK))
+    {
         *vaddr = (void*)hnd->base;
+    }
 
     if (usage & GRALLOC_USAGE_YUV_ADDR) {
         vaddr[0] = (void*)hnd->base;
